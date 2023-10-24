@@ -16,6 +16,14 @@ void swap_array(int *array, int i, int j)
 	array[i] = array[j];
 	array[j] = temp;
 }
+
+/**
+ * quick_sort_recursive - recursive helper function for quick_sort
+ * @array: array of integers
+ * @start: lowest index of array
+ * @end: highest index of array
+ * @size: size of array
+ */
 void quick_sort_recursive(int *array, int left, int right, size_t size)
 {
 	int i, j, y;
@@ -44,6 +52,12 @@ void quick_sort_recursive(int *array, int left, int right, size_t size)
 	}
 }
 
+/**
+ * quick_sort - sort an array of integers in ascending order using the
+ * Quick sort algorithm
+ * @array: array of integers
+ * @size: size of array
+ */
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2 || !array)
