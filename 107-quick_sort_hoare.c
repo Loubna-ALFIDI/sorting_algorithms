@@ -1,17 +1,15 @@
 #include "sort.h"
 /**
- * swap_array - swaps two integers
+ * swap - swaps two integers
  * @a: first integer
  * @b: second integer
  * Return: Nothing
  */
-void swap_array(int *array, int i, int j)
+void swap(int *a, int *b)
 {
-	int temp;
-
-	temp = array[i];
-	array[i] = array[j];
-	array[j] = temp;
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 /**
@@ -40,7 +38,7 @@ int hoare_partition(int *array, int size, int low, int high)
 		if (i >= j)
 			return (j);
 
-		swap_array(array, i, j);
+		swap(&array[i], &array[j]);
 		print_array(array, size);
 	}
 }
