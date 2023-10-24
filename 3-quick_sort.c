@@ -20,8 +20,8 @@ void swap_array(int *array, int i, int j)
 /**
  * quick_sort_recursive - recursive helper function for quick_sort
  * @array: array of integers
- * @start: lowest index of array
- * @end: highest index of array
+ * @left: lowest index of array
+ * @right: highest index of array
  * @size: size of array
  */
 void quick_sort_recursive(int *array, int left, int right, size_t size)
