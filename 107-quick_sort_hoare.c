@@ -56,10 +56,10 @@ void quicksort_hoare(int *array, int size, int low, int high)
 	int p = hoare_partition(array, size, low, high);
 
 	if (low < high)
-    {
+	{
 		quicksort_hoare(array, size, low, p - 1);
 		quicksort_hoare(array, size, p, high);
-    }
+	}
 }
 
 /**
