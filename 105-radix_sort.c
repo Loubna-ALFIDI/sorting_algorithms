@@ -8,38 +8,32 @@
 */
 void count(int *array, size_t size, int p)
 {
-    size_t max = array[0];
+    size_t max = 9;
     int *b, *c;
     size_t i;
 
-    for(i = 1; i < size; i++)
-    {
-        if((int)max < array[i])
-            max = array[i];
-    }
-    
     b = malloc(sizeof(int) * (max + 1));
     c = malloc(sizeof(int) * (size));
-    for(i = 0; i < max + 1; i++)
-        b[i]=0;
 
-    for(i = 0; i < size; i++)
+    for (i = 0; i < max + 1; i++)
+        b[i] = 0;
+
+    for (i = 0; i < size; i++)
         b[(array[i] / p) % 10] += 1;
 
-    for(i = 1; i < max + 1; i++)
-       b[i] += b[i-1];
+    for (i = 1; i < max + 1; i++)
+        b[i] += b[i - 1];
 
-    for(i = 0; i < size; i++)
-        c[i]=0;
+    for (i = 0; i < size; i++)
+        c[i] = 0;
 
-    
-    for(i = 0; i < size; i++)
+    for (i = size - 1; i < size; i--)
     {
         c[b[(array[i] / p) % 10] - 1] = array[i];
-        b[(array[i] / p ) % 10] -= 1;
+        b[(array[i] / p) % 10] -= 1;
     }
 
-    for(i = 0; i < size; i++)
+    for (i = 0; i < size; i++)
         array[i] = c[i];
 }
 
